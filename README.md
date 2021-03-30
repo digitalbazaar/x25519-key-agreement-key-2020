@@ -1,5 +1,9 @@
 # X25519KeyAgreementKey2020 _(@digitalbazaar/x25519-key-agreement-key-2020)_
 
+[![Build status](https://img.shields.io/github/workflow/status/digitalbazaar/x25519-key-agreement-key-2020/Node.js%20CI)](https://github.com/digitalbazaar/x25519-key-agreement-key-2020/actions?query=workflow%3A%22Node.js+CI%22)
+[![Coverage status](https://img.shields.io/codecov/c/github/digitalbazaar/x25519-key-agreement-key-2020)](https://codecov.io/gh/digitalbazaar/x25519-key-agreement-key-2020)
+[![NPM Version](https://img.shields.io/npm/v/@digitalbazaar/x25519-key-agreement-key-2020.svg)](https://npm.im/@digitalbazaar/x25519-key-agreement-key-2020)
+
 > An X25519 (Curve25519) DH (Diffie-Hellman) key implementation to work with the X25519 2020 Crypto suite.
 
 ## Table of Contents
