@@ -5,9 +5,9 @@ import chai from 'chai';
 chai.should();
 const {expect} = chai;
 
-// import {
-//   Ed25519VerificationKey2018
-// } from '@digitalbazaar/ed25519-verification-key-2018';
+import {
+  X25519KeyAgreementKey2019
+} from '@digitalbazaar/x25519-key-agreement-key-2019';
 import {
   Ed25519VerificationKey2020
 } from '@digitalbazaar/ed25519-verification-key-2020';
@@ -142,6 +142,20 @@ describe('X25519KeyAgreementKey2020', () => {
       const result = key.verifyFingerprint({fingerprint});
       expect(result.valid).to.be.true;
       expect(result.error).to.not.exist;
+    });
+  });
+
+  describe('Backwards compat with X25519KeyAgreementKey2019', () => {
+    it('2020 key should import from 2019', async () => {
+      const keyPair2019 = await X25519KeyAgreementKey2019.generate({
+        controller: 'did:example:1234'
+      });
+
+      const keyPair2020 = await X25519KeyAgreementKey2020
+        .fromX25519KeyAgreementKey2019(keyPair2019);
+
+      // Both should have the same fingerprint
+      expect(keyPair2019.fingerprint()).to.equal(keyPair2020.fingerprint());
     });
   });
 });
