@@ -64,6 +64,15 @@ Generating:
 const keyPair = await X25519KeyAgreementKey2020.generate({
   controller: 'did:example:1234'
 });
+// ->
+{
+  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "controller": "did:example:1234",
+  "type": "X25519KeyAgreementKey2020",
+  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4",
+  "privateKeyMultibase": "z8aAkJ9NcWKhSdQXvz1Eh2bDhptgSKAYn8ECvPVcAYjrp"
+}
+
 ```
 
 Serializing just the public key:
@@ -72,10 +81,10 @@ Serializing just the public key:
 keyPair.export({publicKey: true});
 // ->
 {
-  id: 'did:example:1234#z6LSbh9HiAU2zzBdFMdKZGHfg1UjvAYF8C8kYnkfGKuCxYEB',
-  type: 'X25519KeyAgreementKey2020',
-  controller: 'did:example:1234',
-  publicKeyBase58: '1y8BrfAuXTt9yFZ2cmiMRGG5218Raxbfp2ymsFgFATR'
+  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "controller": "did:example:1234",
+  "type": "X25519KeyAgreementKey2020",
+  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4"
 }
 ```
 
@@ -85,12 +94,12 @@ Serializing both the private and public key:
 // a different key pair than the previous example
 await keyPair.export({publicKey: true, privateKey: true})
 // ->
- {
-  id: 'did:example:1234#z6LSjeJZaUHMvEKW7tEJXV4PrSm61NzxxHhDXF6zHnVtDu9g',
-  type: 'X25519KeyAgreementKey2020',
-  controller: 'did:example:1234',
-  publicKeyBase58: '8y8Q4AUVpmbm2VrXzqYSXrYcAETrFgX4eGPJoKrMWXNv',
-  privateKeyBase58: '95tmYuhqSuJqY77FEg78Zy3LFQ1cENxGv2wMvayk7Lqf'
+{
+  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "controller": "did:example:1234",
+  "type": "X25519KeyAgreementKey2020",
+  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4",
+  "privateKeyMultibase": "z8aAkJ9NcWKhSdQXvz1Eh2bDhptgSKAYn8ECvPVcAYjrp"
 }
 ```
 
@@ -99,10 +108,10 @@ Deserializing:
 ```js
 // Loading public key only
 const keyPair = await X25519KeyAgreementKey2020.from({
-  id: 'did:example:1234#z6LSjeJZaUHMvEKW7tEJXV4PrSm61NzxxHhDXF6zHnVtDu9g',
-  type: 'X25519KeyAgreementKey2020',
-  controller: 'did:example:1234',
-  publicKeyBase58: '8y8Q4AUVpmbm2VrXzqYSXrYcAETrFgX4eGPJoKrMWXNv'
+  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "controller": "did:example:1234",
+  "type": "X25519KeyAgreementKey2020",
+  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4"
 });
 ```
 
