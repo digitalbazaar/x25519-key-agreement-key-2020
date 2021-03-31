@@ -47,7 +47,7 @@ describe('X25519KeyAgreementKey2020', () => {
         error = e;
       }
       expect(error.message)
-        .to.equal('The "publicKeyMultibase" property is required.');
+        .to.equal('The "publicKeyMultibase" parameter is required.');
     });
   });
 
