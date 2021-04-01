@@ -21,9 +21,11 @@ const mockKey = {
 
 describe('X25519KeyAgreementKey2020', () => {
   describe('class vars', () => {
-    it('should expose suite id for crypto-ld usage', async () => {
+    it('should expose suite and context for crypto-ld usage', async () => {
       expect(X25519KeyAgreementKey2020.suite)
         .to.equal('X25519KeyAgreementKey2020');
+      expect(X25519KeyAgreementKey2020.SUITE_CONTEXT)
+        .to.equal('https://w3id.org/security/suites/x25519-2020/v1');
     });
   });
 
