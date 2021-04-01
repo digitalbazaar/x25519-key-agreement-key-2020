@@ -117,12 +117,17 @@ describe('X25519KeyAgreementKey2020', () => {
     });
 
     it('should export both public and private key', async () => {
-      const key = await X25519KeyAgreementKey2020.generate();
+      const key = await X25519KeyAgreementKey2020.generate({
+        controller: 'did:example:1234'
+      });
+      key.revoked = '2019-10-12T07:20:50.52Z';
 
       const exported = key.export({publicKey: true, privateKey: true});
-      expect(exported).to.have.keys([
-        'id', 'controller', 'type', 'publicKeyMultibase', 'privateKeyMultibase'
-      ]);
+      expect(exported).to.have.keys(['id', 'type', 'controller',
+        'publicKeyMultibase', 'privateKeyMultibase', 'revoked']);
+      expect(exported.controller).to.equal('did:example:1234');
+      expect(exported.type).to.equal('X25519KeyAgreementKey2020');
+      expect(exported).to.have.property('revoked', '2019-10-12T07:20:50.52Z');
     });
   });
 
