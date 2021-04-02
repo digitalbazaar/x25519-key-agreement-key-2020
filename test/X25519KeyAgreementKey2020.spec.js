@@ -127,8 +127,10 @@ describe('X25519KeyAgreementKey2020', () => {
       key.revoked = pastDate;
 
       const exported = key.export({publicKey: true, privateKey: true});
-      expect(exported).to.have.keys(['id', 'type', 'controller',
-        'publicKeyMultibase', 'privateKeyMultibase', 'revoked']);
+      expect(exported).to.have.keys([
+        'id', 'type', 'controller', 'publicKeyMultibase',
+        'privateKeyMultibase', 'revoked'
+      ]);
       expect(exported.controller).to.equal('did:example:1234');
       expect(exported.type).to.equal('X25519KeyAgreementKey2020');
       expect(exported).to.have.property('revoked', pastDate);
