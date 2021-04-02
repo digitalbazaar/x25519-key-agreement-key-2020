@@ -1,6 +1,6 @@
 {
   "name": "@digitalbazaar/x25519-key-agreement-key-2020",
-  "version": "1.1.0",
+  "version": "1.1.1-0",
   "description": "An X25519 (Curve25519) DH (Diffie-Hellman) key implementation to work with the X25519 2020 Crypto suite.",
   "homepage": "https://github.com/digitalbazaar/x25519-key-agreement-key-2020",
   "author": {
