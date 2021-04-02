@@ -1,5 +1,10 @@
 # x25519-key-agreement-key-2020 Changelog
 
+## 1.2.0 - 2021-04-02
+
+### Added
+- Add `includeContext` flag to `export()`.
+
 ## 1.1.0 - 2021-04-02
 
 ### Added
