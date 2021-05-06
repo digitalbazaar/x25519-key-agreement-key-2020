@@ -66,9 +66,7 @@
     ]
   },
   "browser": {
-    "buffer": false,
-    "crypto": false,
-    "util": false
+    "./lib/crypto.js": "./lib/crypto-browser.js"
   },
   "engines": {
     "node": ">=12"
