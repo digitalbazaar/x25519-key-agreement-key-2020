@@ -1,6 +1,6 @@
 # x25519-key-agreement-key-2020 Changelog
 
-## 1.2.1 -
+## 1.2.1 - 2021-05-06
 
 ### Fixed
 - Fix `package.json` browser section alias for `crypto.js` (was causing downstream
