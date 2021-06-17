@@ -15,8 +15,8 @@ import {X25519KeyAgreementKey2020} from '../';
 import {encode} from 'base58-universal';
 
 const mockKey = {
-  publicKeyMultibase: 'z3kG4YvxDhr7CYMfbevpXupxxBtVMdaw5XrMZPuEEpL6b',
-  privateKeyMultibase: 'z8aEXQC89JZqrbYyVuufNAibQyXgsaGi8jaNL9vSPSc2H'
+  publicKeyMultibase: 'z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM',
+  privateKeyMultibase: 'z3weeMD56C1T347EmB6kYNS7trpQwjvtQCpCYRpqGz6mcemT'
 };
 
 describe('X25519KeyAgreementKey2020', () => {
@@ -49,7 +49,7 @@ describe('X25519KeyAgreementKey2020', () => {
         error = e;
       }
       expect(error.message)
-        .to.equal('The "publicKeyMultibase" parameter is required.');
+        .to.equal('The "publicKeyMultibase" property is required.');
     });
   });
 
@@ -57,9 +57,9 @@ describe('X25519KeyAgreementKey2020', () => {
     it('should convert both public and private key (2020)', async () => {
       const edKeyPair = await Ed25519VerificationKey2020.from({
         controller: 'did:example:123',
-        /* eslint-disable-next-line max-len */
-        privateKeyMultibase: 'z4F71TAGqQYe7KE9p4HUzoVV9arQwKP4gPtvi89EPNGuwA1qLE4RRxitA2rEcdEszERj3pN1DWKARBZQ2BACLbW1V',
-        publicKeyMultibase: 'zHLi1h9SzENZyEv7ifPNtu8xyJNzCFFeaC6X9rsZKFgv3'
+        publicKeyMultibase: 'z6Mkon3Necd6NkkyfoGoHxid2znGc59LU3K7mubaRcFbLfLX',
+        privateKeyMultibase: 'zruzf4Y29hDp7vLoV3NWzuymGMTtJcQfttAWzESod4wV2fb' +
+          'PvEp4XtzGp2VWwQSQAXMxDyqrnVurYg2sBiqiu1FHDDM'
       });
 
       const xKeyPair = X25519KeyAgreementKey2020
@@ -68,9 +68,9 @@ describe('X25519KeyAgreementKey2020', () => {
       expect(xKeyPair.type).to.equal('X25519KeyAgreementKey2020');
       expect(xKeyPair.controller).to.equal('did:example:123');
       expect(xKeyPair.publicKeyMultibase).to
-        .equal('z9K6xjwBdjKC4W3r41ZP5WUxp8XXm8gT9GvR1G5Eocs1Z');
+        .equal('z6LSdVzMmB67tKXYmkjiKRAQgbxgjnjdfiajqUvx7C9fxTNv');
       expect(xKeyPair.privateKeyMultibase).to
-        .equal('zH9ruaVs9LnRUwxNMLTjDkEbWW1P3bcBuiu7GxoBbEpdV');
+        .equal('z3wecm2zNYbRorUz8ZfuV1tGbKr41xS2GzZM2jFfvyXytE9K');
 
       // Check to make sure export works after conversion
       const exported = xKeyPair.export({publicKey: true});
@@ -83,19 +83,24 @@ describe('X25519KeyAgreementKey2020', () => {
   describe('deriveSecret', () => {
     it('should produce a secret from a remote key', async () => {
       const localKey = await X25519KeyAgreementKey2020.from({
-        privateKeyMultibase: 'zB1tfmsThxDBrFx7VdtimC26s1WW1aFySxdR16n5SfDJa',
-        publicKeyMultibase: 'zFWzRdFAfTJGsdPWFvD1oXy469wAsGptMiFpdecxgcek6'
+        publicKeyMultibase: 'z6LSdVzMmB67tKXYmkjiKRAQgbxgjnjdfiajqUvx7C9fxTNv',
+        privateKeyMultibase: 'z3wecm2zNYbRorUz8ZfuV1tGbKr41xS2GzZM2jFfvyXytE9K'
       });
 
-      const remoteKey = await X25519KeyAgreementKey2020.from({
-        publicKeyMultibase: 'z73e843su1epHouuHyDzjy2YXZfZrNiXLrr1hjpJkBeUG'
+      const edKeyPair = await Ed25519VerificationKey2020.from({
+        controller: 'did:example:123',
+        publicKeyMultibase: 'z6MknCCLeeHBUaHu4aHSVLDCYQW9gjVJ7a63FpMvtuVMy53T',
+        privateKeyMultibase: 'zrv2EET2WWZ8T1Jbg4fEH5cQxhbUS22XxdweypUbjWVzv1Y' +
+          'D6VqYuW6LH7heQCNYQCuoKaDwvv2qCWz3uBzG2xesqmf'
       });
+      const remoteKey = X25519KeyAgreementKey2020
+        .fromEd25519VerificationKey2020({keyPair: edKeyPair});
 
       const secret = await localKey.deriveSecret({publicKey: remoteKey});
       const secretString = encode(secret);
 
       expect(secretString).to
-        .equal('3orgcVQPH25E7ybPDz7eEnawCFTtjuYEu3nXQNPbQ1Sv');
+        .equal('4jK2aXkz6pspNahm7yvMS9Z8S1ghtDm22Q1HjE3p1cNJ');
     });
   });
 
