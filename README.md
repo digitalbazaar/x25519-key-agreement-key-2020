@@ -66,11 +66,11 @@ const keyPair = await X25519KeyAgreementKey2020.generate({
 });
 // ->
 {
-  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "id": "did:example:1234#z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM",
   "controller": "did:example:1234",
   "type": "X25519KeyAgreementKey2020",
-  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4",
-  "privateKeyMultibase": "z8aAkJ9NcWKhSdQXvz1Eh2bDhptgSKAYn8ECvPVcAYjrp"
+  "publicKeyMultibase": "z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM",
+  "privateKeyMultibase": "z3weeMD56C1T347EmB6kYNS7trpQwjvtQCpCYRpqGz6mcemT"
 }
 
 ```
@@ -81,10 +81,10 @@ Serializing just the public key:
 keyPair.export({publicKey: true});
 // ->
 {
-  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "id": "did:example:1234#z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM",
   "controller": "did:example:1234",
   "type": "X25519KeyAgreementKey2020",
-  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4"
+  "publicKeyMultibase": "z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM"
 }
 ```
 
@@ -95,11 +95,11 @@ Serializing both the private and public key:
 await keyPair.export({publicKey: true, privateKey: true})
 // ->
 {
-  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "id": "did:example:1234#z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM",
   "controller": "did:example:1234",
   "type": "X25519KeyAgreementKey2020",
-  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4",
-  "privateKeyMultibase": "z8aAkJ9NcWKhSdQXvz1Eh2bDhptgSKAYn8ECvPVcAYjrp"
+  "publicKeyMultibase": "z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM",
+  "privateKeyMultibase": "z3weeMD56C1T347EmB6kYNS7trpQwjvtQCpCYRpqGz6mcemT"
 }
 ```
 
@@ -108,10 +108,10 @@ Deserializing:
 ```js
 // Loading public key only
 const keyPair = await X25519KeyAgreementKey2020.from({
-  "id": "did:example:1234#z6LShXSgPY6JKdbMmiLYaQ8JGjJFRrb4TsByj3dz5sSyQLUp",
+  "id": "did:example:1234#z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM",
   "controller": "did:example:1234",
   "type": "X25519KeyAgreementKey2020",
-  "publicKeyMultibase": "z6rGWsEHSEAscgKxn3kcLx95mai3wmG1pr4vJbQoSgxi4"
+  "publicKeyMultibase": "z6LSeRSE5Em5oJpwdk3NBaLVERBS332ULC7EQq5EtMsmXhsM"
 });
 ```
 
