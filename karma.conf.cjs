@@ -26,16 +26,8 @@ module.exports = function(config) {
     },
 
     webpack: {
-      //mode: 'production',
       mode: 'development',
       devtool: 'inline-source-map',
-      node: false,
-      resolve: {
-        fallback: {
-          url: false,
-          crypto: false
-        }
-      }
     },
 
     // test results reporter to use

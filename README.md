@@ -37,7 +37,7 @@ See also (related specs):
 
 ## Install
 
-Requires Node.js 12+
+Requires Node.js 14+
 
 To install locally (for development):
 
