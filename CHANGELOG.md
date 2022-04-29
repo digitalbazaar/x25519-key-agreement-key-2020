@@ -1,5 +1,13 @@
 # x25519-key-agreement-key-2020 Changelog
 
+## 3.0.0 - 2022-xx-xx
+
+### Changed
+- **BREAKING**: Convert to module (ESM).
+- **BREAKING**: Require Node.js >=14.
+- Update dependencies.
+- Lint module.
+
 ## 2.1.0 - 2022-05-06
 
 ### Changed
