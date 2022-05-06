@@ -1,6 +1,6 @@
 # x25519-key-agreement-key-2020 Changelog
 
-## 2.1.0 - 2022-05-xx
+## 2.1.0 - 2022-05-06
 
 ### Changed
 - Use `@noble/ed25519` to convert public ed25519 keys to x25519.
