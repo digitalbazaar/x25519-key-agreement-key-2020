@@ -17,11 +17,14 @@
     "email": "support@digitalbazaar.com"
   },
   "license": "BSD-3-Clause",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "browser": {
+    "./lib/crypto.js": "./lib/crypto-browser.js"
+  },
   "files": [
     "lib/*.js"
   ],
-  "type": "module",
-  "exports": "./lib/index.js",
   "dependencies": {
     "@noble/ed25519": "^1.6.0",
     "base58-universal": "^2.0.0",
@@ -58,9 +61,6 @@
       "html",
       "text-summary"
     ]
-  },
-  "browser": {
-    "./lib/crypto.js": "./lib/crypto-browser.js"
   },
   "engines": {
     "node": ">=14"
