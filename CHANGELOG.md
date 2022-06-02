@@ -1,6 +1,6 @@
 # x25519-key-agreement-key-2020 Changelog
 
-## 3.0.0 - 2022-xx-xx
+## 3.0.0 - 2022-06-02
 
 ### Changed
 - **BREAKING**: Convert to module (ESM).
