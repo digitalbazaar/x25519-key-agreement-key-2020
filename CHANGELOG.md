@@ -1,5 +1,12 @@
 # x25519-key-agreement-key-2020 Changelog
 
+## 3.0.1 - 2022-09-xx
+
+### Changed
+- Replace internal ed25519 => x25519 conversion implementation such
+  that only tweetnacl is used, allowing for `ed2curve` dependency to
+  be removed.
+
 ## 3.0.0 - 2022-06-02
 
 ### Changed
