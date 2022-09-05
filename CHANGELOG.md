@@ -1,6 +1,6 @@
 # x25519-key-agreement-key-2020 Changelog
 
-## 3.0.1 - 2022-09-xx
+## 3.0.1 - 2022-09-04
 
 ### Changed
 - Replace internal ed25519 => x25519 conversion implementation such
